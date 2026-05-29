@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom'
 import './index.css'
+import Home from './pages/Home'
 
 // 登录页面
 function LoginPage() {
@@ -324,7 +325,7 @@ function App() {
       <Route path="/" element={<LoginPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
-      <Route path="/home" element={<HomePage />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/create" element={<TemplatePage title="发布帖子" />} />
       <Route path="/code" element={<TemplatePage title="代码运行" />} />
       <Route path="/profile/:id" element={<TemplatePage title="个人中心" />} />
