@@ -93,7 +93,6 @@ const PORT = process.env.PORT || 5000;
 
 const User = require('./models/User');
 const Post = require('./models/Post');
-const Tag = require('./models/Tag');
 
 const sampleUsers = [
   {
@@ -174,21 +173,6 @@ const samplePosts = [
   }
 ];
 
-const sampleTags = [
-  { name: 'React', count: 10 },
-  { name: 'JavaScript', count: 15 },
-  { name: 'Python', count: 12 },
-  { name: 'Node.js', count: 8 },
-  { name: '算法', count: 6 },
-  { name: '前端', count: 20 },
-  { name: '后端', count: 18 },
-  { name: 'Git', count: 5 },
-  { name: '学习', count: 3 },
-  { name: '教程', count: 7 },
-  { name: '性能优化', count: 4 },
-  { name: '工具', count: 9 }
-];
-
 async function addSampleData() {
   try {
     await connectDB();
@@ -203,9 +187,6 @@ async function addSampleData() {
         post.author = users[Math.floor(Math.random() * users.length)]._id;
       });
       await Post.insertMany(samplePosts);
-      
-      console.log('Adding sample tags...');
-      await Tag.insertMany(sampleTags);
       
       console.log('Sample data added successfully!');
     }
